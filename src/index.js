@@ -1,8 +1,3 @@
-const jokeURL = "https://api.chucknorris.io/jokes/random";
+import { obtenerChiste } from "./js/http-provider";
 
-fetch( jokeURL ).then( response  => {
-    response.json().then(({id, value}) => {
-        console.log(id);
-        console.log(value);
-    })
-});
+obtenerChiste().then( console.log );
