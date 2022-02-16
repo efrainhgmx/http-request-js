@@ -2,6 +2,7 @@ import { obtenerChiste } from "./http-provider";
 
 const body = document.body;
 let btnOtro, olList;
+let chisteNumero = 1;
 
 
 const crearChistesHtml = () => {
@@ -38,9 +39,10 @@ const eventos = () => {
 
 const dibujarChiste = ( chiste ) => {
     const olItem = document.createElement('li');
-    olItem.innerHTML =  `<b>${ chiste.id }</b>: ${ chiste.value }`;
+    olItem.innerHTML =  ` <b>${chisteNumero}.- ${ chiste.id }</b>: ${ chiste.value }`;
     olItem.classList.add('list-group-item');
     olList.append(olItem);
+    chisteNumero += 1;
 };
 
 

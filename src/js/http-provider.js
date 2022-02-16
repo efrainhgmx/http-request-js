@@ -1,4 +1,5 @@
 const jokeURL = "https://api.chucknorris.io/jokes/random";
+const urlUsuarios = "https://reqres.in/api/users";
 
 //Todas las funciones async regresan una promesa.
 const obtenerChiste = async () => {
@@ -22,7 +23,19 @@ const obtenerChiste = async () => {
 
 };
 
+const obtenerUsuario = async() => {
+    try {
+        const response = await fetch( urlUsuarios );
+        const { data: usuarios } = await response.json();
+
+        return usuarios;
+    } catch (error) {
+        throw error;
+    }
+};
+
 
 export {
-    obtenerChiste
+    obtenerChiste,
+    obtenerUsuario
 }
