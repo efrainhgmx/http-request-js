@@ -1,3 +1,4 @@
+import { obtenerUsuario } from "./http-provider";
 
 
 
@@ -73,6 +74,9 @@ const crearFilaUsuario = ( { id, email, first_name, last_name, avatar} ) => {
 export const init = async() => {
 
     crearHtml();
+    obtenerUsuario()
+        .then( users => users.forEach( user => crearFilaUsuario(user) ) )
+        .catch( console.error);
 
     // Obtener la lista de usuarios usando el servicio creado
     // Por cada usuario, llamar la función crearFila (for, forEach)
