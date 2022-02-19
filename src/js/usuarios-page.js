@@ -74,9 +74,13 @@ const crearFilaUsuario = ( { id, email, first_name, last_name, avatar} ) => {
 export const init = async() => {
 
     crearHtml();
-    obtenerUsuario()
+    const usuarios = await obtenerUsuario();
+
+    usuarios.forEach( crearFilaUsuario );
+    
+    /* obtenerUsuario()
         .then( users => users.forEach( user => crearFilaUsuario(user) ) )
-        .catch( console.error);
+        .catch( console.error); */
 
     // Obtener la lista de usuarios usando el servicio creado
     // Por cada usuario, llamar la función crearFila (for, forEach)
