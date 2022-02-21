@@ -1,12 +1,13 @@
-import { init } from "./js/usuarios-page";
-import { obtenerChiste, obtenerUsuario } from "./js/http-provider";
-import * as CRUD from './js/crud-provider';
+//import { init } from "./js/usuarios-page";
+import { init } from "./js/archivos-page";
+//import { obtenerChiste, obtenerUsuario } from "./js/http-provider";
+//import * as CRUD from './js/crud-provider';
 //obtenerChiste().then( console.log );
 //obtenerUsuario().then( console.table ).catch( console.error );
 
-//init();
+init();
 
-CRUD.getUsuario(2).then( console.log );
+/* CRUD.getUsuario(2).then( console.log );
 CRUD.crearUsuario({
     name: 'Efrain',
     job: 'Frontend Engineer'
@@ -17,4 +18,4 @@ CRUD.actualizarUsuario(1, {
     jon: 'Developer'
 }).then( console.log );
 
-CRUD.borrarUsuario(1).then(console.log);
+CRUD.borrarUsuario(1).then(console.log); */
